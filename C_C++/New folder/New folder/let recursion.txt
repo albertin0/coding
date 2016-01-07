@@ -1,0 +1,62 @@
+/*
+output
+enter no of production2
+
+enter productionsA->Ab/x
+B->By/f
+
+it is left recursive
+grammar without left recursion
+A->xA'
+A'->bA'
+it is left recursive
+grammar without left recursion
+B->fB'
+B'->yB'
+*/
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+#include<stdio.h>
+#define size 10
+using namespace std;
+int main()
+{
+char non_terminal,beta,alpha[10];
+int num,i,k,j;
+cout<<"\nenter no of production";
+cin>>num;
+char production[10][size];
+int index=3;
+
+cout<<"\nenter productions";
+for(i=0;i<num;i++)
+cin>>production[i];
+for(i=0;i<num;i++)
+{
+non_terminal=production[i][0];
+if(non_terminal==production[i][index])
+{
+k=index+1;
+j=0;
+while(production[i][k]!='/')
+{
+alpha[j++]=production[i][k++];
+}
+alpha[j]='\0';
+cout<<"\nit is left recursive";
+
+if(production[i][k]=='/')
+{
+beta=production[i][++k];
+}
+
+cout<<"\ngrammar without left recursion\n";
+printf("%c->%c%c\'",non_terminal,beta,non_terminal);
+printf("\n%c\'->%s%c\'",non_terminal,alpha,non_terminal);
+}
+else
+cout<<"\nis not left recursive";
+}
+return 0;
+}

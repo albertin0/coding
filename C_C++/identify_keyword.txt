@@ -1,0 +1,47 @@
+ #include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+int i,flag=0,m,a=0,len;
+char s[][32]={"if","else","goto","continue","return","auto","enum","restrict","unsigned","break","extern","return","void","case","float","short","volatile",
+"char","for","signed","while","const","goto","sizeof","_Bool","continue","if","static","_Complex","default","inline","struct","_Imaginary",
+"do","int","switch","double","long","typedef","else","register","union"},str[10];
+system("cls");
+printf("\n enter the string :");
+gets(str);
+for(i=0;i<45;i++)
+{
+m=strcmp(str,s[i]);
+if(m==0)
+{
+    flag=1; break;
+}
+}
+if(flag!=0)
+printf("\n it is a keyword");
+else
+{
+    printf("\n it is not a keyword");
+    len=strlen(str);
+    a=0;
+    while(a<len)
+    {
+        if(isdigit(str[a]))
+        {
+            a++;
+        }
+        else
+        {
+            printf("\nIt is not a Constant");
+            break;
+
+        }
+    }
+    if(a==len)
+    {
+    printf("\nIt is a Constant");
+    }
+}
+getch();
+}

@@ -1,0 +1,50 @@
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+bool isop(char c){
+    if(c=='+'||c=='-'||c=='*'||c=='/'||c=='%')
+    return true;
+    else
+    return false;
+    }
+struct cell{
+    int data;
+    cell* next;
+    };
+char* posttopre(char* post){
+    int top=-1;
+    cell* pre[100];
+    for(int i=0;i<strlen(post);i++){
+        if(!isop(post[i])){
+            pre[++top]=new cell;
+            pre[top]->data=post[i];
+            pre[top]->next=NULL;
+            }
+        else{
+            cell* temp=new cell;
+            temp->data=post[i];
+            temp->next=pre[top-1];
+            cell* t=temp->next;
+            while(t->next!=NULL)
+            t=t->next;
+            t->next=pre[top];
+            pre[--top]=temp;
+            }
+        }
+        cell* show=pre[0];
+        char* pre1=new char[strlen(post)];
+        for(int j=0;j<strlen(post);j++){
+            pre1[j]=show->data;
+            show=show->next;
+            }
+            return pre1;
+    }
+    int main(){
+        char* post;
+        cout<<"enter postfix notation:";
+        cin>>post;
+        char* pre=posttopre(post);
+      cout<<pre;
+        return 0;
+        }

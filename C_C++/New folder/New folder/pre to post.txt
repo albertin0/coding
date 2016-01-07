@@ -1,0 +1,79 @@
+/*
+output
+Enter a prefix : +a/*bcd
+abc*d/+
+*/
+#include<iostream.h>
+#include<string.h>
+#include<conio.h>
+#define MAX 100
+
+  int count=1;
+char e[MAX],b[2*MAX];
+
+int isoperator(char ch){
+    return ch=='+' || ch=='-' || ch == '*' ||
+	ch == '/' || ch == '$' || ch == '%';
+}
+
+void left(char,int);
+void right(char,int);
+
+void left(char op,int i){
+
+    if(isoperator(op)){
+
+	b[2*i]=op;
+	count++;
+	left(e[count],2*i);
+	right(e[count],2*i);
+    }
+    else
+    {
+	b[2*i]=op;
+	count++;
+    }
+}
+
+void right(char op,int i){
+
+    if(isoperator(op)){
+
+	b[2*i+1]=op;
+	count++;
+	left(e[count],2*i+1);
+	right(e[count],2*i+1);
+    }
+    else
+    {
+	b[2*i+1]=op;
+	count++;
+    }
+}
+
+void postorder(int i){
+    if(isoperator(b[i]))postorder(2*i);
+    if(isoperator(b[i]))postorder(2*i+1);
+    cout << b[i] ;
+
+}
+
+int main(){
+
+    cout << "Enter a prefix : ";
+    cin >> e;
+    int len=strlen(e);
+
+    count=0;
+    b[1]=e[count];
+
+    count++;
+    left(e[count],1);
+    right(e[count],1);
+
+    postorder(1);
+    getch();
+    return 0;
+
+
+}

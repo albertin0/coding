@@ -1,0 +1,5 @@
+(function() {
+    var date = new Date();
+    date.setTime(date.getTime() + (3600 * 1000));
+    document.cookie = "__ctxpop=0; expires=" + date.toGMTString() + "; path=/";
+})();

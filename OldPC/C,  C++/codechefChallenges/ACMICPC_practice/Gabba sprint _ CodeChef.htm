@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html class="js" lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="Gabba%20sprint%20_%20CodeChef_files/widgets.js" id="twitter-wjs"></script><script async="" src="Gabba%20sprint%20_%20CodeChef_files/4e7c8fce06a9ab05530008e5.js"></script><script src="Gabba%20sprint%20_%20CodeChef_files/fp.js" async=""></script><script src="Gabba%20sprint%20_%20CodeChef_files/atrk.js" async="" type="text/javascript"></script><script src="Gabba%20sprint%20_%20CodeChef_files/ga.js" async="" type="text/javascript"></script><script src="Gabba%20sprint%20_%20CodeChef_files/sdk.js" id="facebook-jssdk"></script><script>
+        (function (_, e, rr, s) {
+            _errs = [s];
+            var c = _.onerror;
+            _.onerror = function () {
+                var a = arguments;
+                _errs.push(a);
+                c && c.apply(this, a)
+            };
+            var b = function () {
+                var c = e.createElement(rr), b = e.getElementsByTagName(rr)[0];
+                c.src = "//beacon.errorception.com/" + s + ".js";
+                c.async = !0;
+                b.parentNode.insertBefore(c, b)
+            };
+            _.addEventListener ? _.addEventListener("load", b, !1) : _.attachEvent("onload", b)
+        })
+        (window, document, "script", "4e7c8fce06a9ab05530008e5");
+    </script>
+
+    <link rel="dns-prefetch" href="https://codechef_shared.s3.amazonaws.com/">
+    <link rel="dns-prefetch" href="https://beacon.errorception.com/">
+    <link rel="dns-prefetch" href="https://static.ak.facebook.com/">
+    <link rel="dns-prefetch" href="https://fbcdn-profile-a.akamaihd.net/">
+    <script type="text/javascript">var _sf_startpt = (new Date()).getTime()</script>
+    <title>Gabba sprint | CodeChef</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="programming, language, algorithm, contest, contester, Java, C#, Pascal, C, C++, python, ruby, caml, ocaml, perl, haskell, lisp, prolog, fortran, assembler, asembler, functional, online, judge, problem, problemset, ACM">
+    <link rel="shortcut icon" href="https://www.codechef.com/misc/favicon.ico" type="image/x-icon">
+    <link type="text/css" rel="stylesheet" media="all" href="Gabba%20sprint%20_%20CodeChef_files/main.css">
+    <link rel="stylesheet" href="Gabba%20sprint%20_%20CodeChef_files/autocomplete.css">
+    <link rel="stylesheet" href="Gabba%20sprint%20_%20CodeChef_files/datatable.css">
+    <link rel="stylesheet" href="Gabba%20sprint%20_%20CodeChef_files/font-awesome.css">
+    <link rel="stylesheet" href="Gabba%20sprint%20_%20CodeChef_files/comment.css">
+    <link rel="stylesheet" href="Gabba%20sprint%20_%20CodeChef_files/register.css">
+    <link rel="stylesheet" href="Gabba%20sprint%20_%20CodeChef_files/complete_registration.css">
+    <script src="Gabba%20sprint%20_%20CodeChef_files/platform.js" async="" defer="defer" gapi_processed="true"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/aes.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/jquery_005.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/localStorage.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/todo_notification.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/moment.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/marked.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/common.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/handlebars.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/prod.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/autocomplete.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/datatable.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/comment.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/drupal.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/popupoverlay.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/keybinding.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/codechefGenericModal.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/fb_sdk.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/codechef_common_functions.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/nice_menus.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/jquery_006.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/jquery.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/tableofcontents.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/common_002.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/contest_page.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/jquery-ui-1.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/problemstatus.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/contest.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/jquery_003.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/form.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/notifications.js"></script>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/todo-widget.js"></script>
+    <link type="text/css" rel="stylesheet" media="all" href="Gabba%20sprint%20_%20CodeChef_files/jquery.css">
+    <link type="text/css" rel="stylesheet" href="Gabba%20sprint%20_%20CodeChef_files/style.css">
+    <link type="text/css" rel="stylesheet" href="Gabba%20sprint%20_%20CodeChef_files/github-markdown.css">
+    <style>
+
+        :root {
+            font-size: 62.5%;
+        }
+
+        .ccl-su-img-social-disconnect {
+            -webkit-filter: grayscale(95%);
+            -moz-filter: grayscale(95%);
+            -o-filter: grayscale(95%);
+            -ms-filter: grayscale(95%);
+            filter: grayscale(95%);
+        }
+
+        .ccl-su-img-social-connect {
+            -webkit-filter: grayscale(35%);
+            -moz-filter: grayscale(35%);
+            -o-filter: grayscale(35%);
+            -ms-filter: grayscale(35%);
+            filter: grayscale(35%);
+        }
+
+        .ccl-su-img-social:hover {
+            -webkit-filter: grayscale(0%);
+            -moz-filter: grayscale(0%);
+            -o-filter: grayscale(0%);
+            -ms-filter: grayscale(0%);
+            filter: grayscale(0%);
+        }
+
+        .ccl-su-img-social-small {
+            width: 3rem;
+        }
+
+        .ccl-su-img-social-mini {
+            width: 1rem;
+        }
+
+        .ccl-su-img-social-medium {
+            width: 5rem;
+        }
+
+        .ccl-su-img-social-large {
+            width: 7rem;
+        }
+
+        .oauth-buttons-header {
+            position: relative;
+            top: -0.5rem;
+        }
+
+        .oauth-button {
+            pading:0;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        .oauth-button-small {
+            width: 3rem;
+            height: 3rem;
+            margin-right: 0.6rem;
+            margin-left: 0.6rem;
+        }
+
+        .oauth-button-medium {
+            width: 5rem;
+            height: 5rem;
+            margin-right: 1rem;
+            margin-left: 1rem;
+        }
+
+        .oauth-button-large {
+            width: 7rem;
+            height: 7rem;
+            margin-right: 1.4rem;
+            margin-left: 1.4rem;
+        }
+
+        .oauth-button-mini {
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.2rem;
+            margin-left: 0.2rem;
+        }
+
+        /*this is to avoid padding and border of button in firefox*/
+        .oauth-button::-moz-focus-inner {
+            padding: 0;
+            border: 0
+        }
+
+
+    </style>
+    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/jquery_002.js"></script>
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow-x:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><script src="Gabba%20sprint%20_%20CodeChef_files/button.js" async="" charset="utf-8" type="text/javascript"></script></head>
+<body class="sidebar-right"><div style="opacity: 0; visibility: hidden; background-color: rgb(0, 0, 0); position: fixed; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2000; transition: all 0.5s ease 0s;" id="Error-modal_background" class="popup_background"></div><div style="opacity: 0; visibility: hidden; position: fixed; overflow: auto; z-index: 2001; transition: all 0.5s ease 0s; top: 0px; right: 0px; left: 0px; bottom: 0px; text-align: center; display: none;" id="Error-modal_wrapper" class="popup_wrapper"><div tabindex="-1" role="dialog" aria-hidden="true" style="opacity: 0; visibility: hidden; display: inline-block; outline: medium none; transition: all 0.5s ease 0s; text-align: left; position: relative; vertical-align: middle;" data-popup-initialized="true" id="Error-modal" class="generic-dialog-box popup_content"><button style="float:right;  background: none; border: none; font-size: 15px; color: grey; cursor:pointer; box-shadow: none !important; -webkit-box-shadow: none !important; -moz-box-shadow: none !important; outline: none;" class="Error-modal_close fa fa-times"></button><div class="content"><div class="ccl-font-h2 ccl-border-bottom ccl-padding-s ccl-margin-sm ccl-align-c">Error</div><div class="ccl-font-p ccl-align-c ccl-margin-m">Some error occurred</div></div></div><div style="display: inline-block; vertical-align: middle; height: 100%;" class="popup_align"></div></div>
+<center>
+    <div class="ember-application" id="ember-root">
+        
+        
+        
+        
+        
+    
+    <div class="ember-view" id="ember242">
+            <div id="header" class="wrapper">
+                <div class="inner-wrapper">
+                    <!-- Header -->
+                    <div id="logo-floater" class="cols-2">
+                        <a href="https://www.codechef.com/" title=""><img src="Gabba%20sprint%20_%20CodeChef_files/logo.png" alt="CodeChef is a non-commercial competitive programming community" id="logo"><span></span></a>
+                    </div>
+                    <div class="cols-2">
+                        <div id="custom-login">
+                            <!--Hello <strong>Admin</strong>, Check your <strong><a href="">Account</a></strong> or <a href="/logout">Log Out</a>-->
+                            
+                            <img style="position: relative;top: -64px;" src="Gabba%20sprint%20_%20CodeChef_files/Loader-Username.gif">
+                            
+                        </div>
+
+
+                        <div id="block-nice_menus-1" class="block block-nice_menus block-header">
+                            <div class="content">
+                                <h2><span class="nice-menu-hide-title">Site Navigation</span></h2>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ember-view" id="ember249">
+        <!-- /HEADER -->
+        <!-- BEGIN: CONTENT -->
+        <table id="maintable" class="maintable" cellpadding="10" cellspacing="0">
+            <tbody><tr>
+                <td class="content" width="99%">
+                    <div class="wrapper" id="content-regions">
+                        
+                        <div class="outer-box-problems">
+                            <div id="breadcrumbs">
+                                <a href="https://www.codechef.com/">Home</a>&nbsp;»&nbsp;<a href="https://www.codechef.com/contests/">Compete</a>&nbsp;»&nbsp;<a href="https://www.codechef.com/TSTAMR15" class="ember-view" id="ember271">ACM-ICPC Asia-Amritapuri Site, 1st Practice Round 2015</a>&nbsp;»&nbsp;Gabba sprint
+                            </div>
+                            <div id="main-content-problem" class="box-white">
+                                <table id="problem-page-top">
+                                <tbody><tr><td width="55%">
+                                    <h1 class="title">Gabba sprint
+                                        <div style="display:inline-block;">
+                                            
+                                            <div class="todo-widget" style="visibility: visible; position: relative;top: 5px;"><input style="outline: none;" src="Gabba%20sprint%20_%20CodeChef_files/add1.png" title="Add problem to Todo list" class="todo-button" problem="AMR14I" contest="TSTAMR15" height="25" type="image" width="25"><div class="todo-button-message"></div></div>
+                                            
+                                         </div>
+                                    </h1>
+                                    <div style="padding:0; overflow:hidden; margin-bottom:5px;">
+                                        <div style="float:left; margin:3px 10px 0 0;">Problem code: <span id="problem-code">AMR14I</span></div>
+                                    </div>
+                                    
+                                    
+                                    <div class="social-button-container">
+                                        <div class="social-button">
+                                            <div style="width: 80px; height: 20px;margin-top: -2px;"><iframe src="Gabba%20sprint%20_%20CodeChef_files/tweet_button.htm" title="Twitter Tweet Button" style="position: static; visibility: visible; width: 80px; height: 20px;" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe></div>
+                                        </div>
+                                        <div class="social-button">
+                                                <div fb-iframe-plugin-query="action=like&amp;app_id=10154282558660454&amp;container_width=0&amp;href=https%3A%2F%2Fwww.codechef.com%2FTSTAMR15%2Fproblems%2FAMR14I&amp;layout=standard&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;width=370" fb-xfbml-state="rendered" class="fb-like fb_iframe_widget" data-width="370px" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"><span style="vertical-align: bottom; width: 370px; height: 20px;"><iframe class="" src="Gabba%20sprint%20_%20CodeChef_files/like.htm" style="border: medium none; visibility: visible; width: 370px; height: 20px;" title="fb:like Facebook Social Plugin" scrolling="no" allowfullscreen="true" allowtransparency="true" name="f21768eaff0a35e" frameborder="0" height="1000px" width="370px"></iframe></span></div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    
+                                </td>
+                                <td width="45%">
+                                    <ul class="button-list">
+                                        
+                                        
+                                        <li><a href="https://www.codechef.com/TSTAMR15/submit/AMR14I" data-bindattr-302="302">Submit</a></li>
+                                        
+                                        <li><a href="https://www.codechef.com/TSTAMR15/status/AMR14I,mindhunter123" data-bindattr-301="301">My Submissions</a></li>
+                                        
+                                        <li><a href="https://www.codechef.com/TSTAMR15/status/AMR14I" data-bindattr-261="261">All Submissions</a></li>
+                                    </ul>
+                                </td>
+                                </tr></tbody></table>
+                                <div id="problem-page-complete">
+                                    <div id="problem-left">
+                                        
+                                        <div class="content"><p class="p1"><span class="s1">Virat
+ Kohli and Rohit Sharma are warming up for the World Cup at the Brisbane
+ Cricket Ground, commonly known as "The Gabba". Their coach has asked 
+them to go to the ground at the crack of dawn, and then jog around the 
+stadium in laps. The Cricket Ground has poles spaced equally apart and 
+numbered sequentially from 1 to N. The first M-1 poles lead up to the 
+entrance of the stadium, and the poles numbered M, M+1, ... N are 
+arranged circularly around the stadium, with pole M being next to pole 
+N. Both players start running from pole 1. They always go from pole i to
+ pole i+1, except when i = N, where they go from pole N to pole M.</span></p>
+<p> <img src="Gabba%20sprint%20_%20CodeChef_files/AMR14I.png" style="width:400px"><br>
+</p><p class="p4"><span class="s1">Due to their different levels of 
+fitness - something that their coach is quite upset about with Virat, 
+that being another story - they have different running speeds P and Q, 
+measured in poles/minute. They have been asked to run for ‘S’ minutes 
+each. Since they can’t keep running for long, the coach has asked them 
+to do short sprints of 1 minute each. First, Virat sprints and covers P 
+poles in 1 minute and stops. Then Rohit sprints and covers Q poles in 1 
+minute and stops. Virat starts again, and they keep doing this for 2*S 
+minutes (S minutes each). Virat and Rohit are considered to meet if they
+ are at the same pole at the end of some  minute. Can you tell how many 
+times they will meet during their jogging routine?</span></p>
+<p class="p5">&nbsp;</p>
+<p class="p6"><span class="s1"><b>Input:</b></span></p>
+<p class="p4"><span class="s1">The first line contains the number of 
+test cases, T. This is followed by T lines, one for each test case. Each
+ test case contains five integers - N, M, S, P and Q.</span></p>
+<p class="p6"><span class="s1"><b>Output:</b></span></p>
+<p class="p4"><span class="s1">For each test case, output the answer on a new line.</span></p>
+<p class="p6"><span class="s1"><b>Constraints:</b></span></p>
+<p class="p6"><span class="s1">1 ≤ T ≤ 100</span></p>
+<p class="p6"><span class="s1">1 ≤ M &lt; N ≤ 500</span></p>
+<p class="p6"><span class="s1">1 ≤ S ≤ 100000</span></p>
+<p class="p6"><span class="s1">1 ≤ P,Q ≤ 500</span></p>
+<p class="p4"><span class="s1">P ≠ Q</span></p>
+<p class="p6"><span class="s1"><b>Sample Input:</b></span></p>
+<p class="p6"><span class="s1">2</span></p>
+<p class="p6"><span class="s1">4 1 4 2 3</span></p>
+<p class="p4"><span class="s1">5 3 10 1 2</span></p>
+<p class="p6"><span class="s1"><b>Sample Output:</b></span></p>
+<p class="p6"><span class="s1">1</span></p>
+<p class="p4"><span class="s1">3</span></p>
+<p class="p6"><span class="s1"><b>Explanation:</b></span></p>
+<p class="p7"><span class="s1">For the first example, Kohli’s position 
+at the end of his 1st, 2nd, 3rd &amp; 4th minutes of run is {3, 1, 3, 1}
+ respectively. While Rohit’s position at the end of his 1st, 2nd, 3rd 
+&amp; 4th minutes of run is {4, 3, 2, 1} respectively. Therefore, they 
+meet exactly once after 8 minutes (their 4 minutes) at pole 1.</span></p>
+<p class="p6"><span class="s1">For the second example, they would meet 
+at the end of their 3rd (total 6th), 6th (total 12th) &amp; 9th (total 
+18th) minute of run.</span></p>
+
+                                        <hr>
+                                            <table align="left" cellpadding="0" cellspacing="0">
+                                                <tbody>
+                                                
+                                                <tr>
+                                                    <td width="14%">Author:</td>
+                                                    <td><a href="https://www.codechef.com/users/murdocc007" data-bindattr-308="308">murdocc007</a></td>
+                                                </tr>
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                <tr>
+                                                    <td width="14%">Date Added:</td>
+                                                    <td>27-12-2014</td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td width="14%">Time Limit:</td>
+                                                    <td>1 sec</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="14%">Source Limit:</td>
+                                                    <td>50000 Bytes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="14%">Languages:</td>
+                                                    <td>ADA, ASM, BASH, 
+BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, 
+D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, 
+LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, 
+PYTH, PYTH 3.1.2, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>
+                                                </tr>
+                                            </tbody></table>
+                                        </div>
+                                        <ul class="button-list bottom-bttn">
+                                            <input value="value" data-bindattr-307="307" type="hidden">
+                                            
+                                                <li><a href="https://www.codechef.com/TSTAMR15/submit/AMR14I" data-bindattr-311="311">Submit</a></li>
+                                            
+                                        </ul>
+                                        
+
+                                    </div>
+                                    <div id="problem-right">
+                                        <div id="sidebar-problem">
+                                            <div id="success-submissions">
+                                                
+                                            <div data-ember-action="312">
+                                            <h3>SUCCESSFUL SUBMISSIONS
+                                                <button class="toogle-button fa fa-plus-square-o"></button>
+                                            </h3>
+                                            </div>
+                                            
+                                        <div id="rankContentDiv"></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <hr>
+                            <div id="problem-comments">
+                                
+                                <div class="ember-view" id="ember325"><section class="cc-comments-section"><div class="comment-topmost-header"><h2 class="noselect cc-comments-title" data-ember-action="326">Comments <i class="fa fa-caret-right"></i></h2></div></section></div>
+                                
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody></table>
+    </div>
+        </div></div>
+    <div id="footer" class="wrapper">
+        <!--<div class="r1 t"></div><div class="r2"></div><div class="r3"></div><div class="r4"></div><div class="r5"></div>-->
+        <script type="text/javascript">
+            String.prototype.capitalize = function () {
+                return this.charAt(0).toUpperCase() + this.slice(1);
+            };
+
+            disconnectOauth = function (event, account) {
+                if (event != undefined) {
+                    event.preventDefault();
+                }
+                var r = confirm("Are you sure you want to disconnect " + account.capitalize() + " account?");
+                if (r == true) {
+                    clearUserCache();
+                    $.ajax({
+                        url: '/OAuth/' + account,
+                        type: 'DELETE',
+                        success: function () {
+                            window.location.reload();
+                        },
+                        error: function () {
+                            invokeGenericModal({
+                                message: "Couldn't complete your request. Please try again.",
+                                id: account + '-error-message'
+                            });
+                        }
+                    });
+                }
+            };
+        </script>
+        <div class="content clear-block">
+            <!-- Footer Contents -->
+            <div id="block-block-13" class="block block-block block-header">
+                <div class="content">
+                    <script language="javascript" type="text/javascript">
+                        function formatTime(ts) {
+                            now = new Date(ts);
+
+                            localtime = new Date();
+                            hour = now.getHours();
+                            min = now.getMinutes();
+                            sec = now.getSeconds();
+
+                            if (min <= 9) {
+                                min = "0" + min;
+                            }
+                            if (sec <= 9) {
+                                sec = "0" + sec;
+                            }
+                            if (hour > 12) {
+                                hour = hour - 12;
+                                add = " PM";
+                            } else {
+                                hour = hour;
+                                add = " AM";
+                            }
+                            if (hour == 12) {
+                                add = " PM";
+                            }
+                            if (hour == 00) {
+                                hour = "12";
+                            }
+
+                            $('#server-time').html(((hour <= 9) ? "0" + hour : hour) + ":" + min + ":" + sec + add);
+
+                            nextSec = (now.getTime() + 1000);
+
+                            setTimeout("formatTime(" + nextSec + ")", 1000);
+                        }
+                        function getDtTimeZone() {
+                            var rightNow = new Date();
+                            var toDay = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);
+                            var temp = toDay.toGMTString();
+                            var date2 = new Date(temp.substring(0, temp.lastIndexOf(" ") - 1));
+                            var stdTime = (toDay - date2) / (1000 * 60 * 60);
+                            return stdTime;
+                        }
+                        /*var d=new Date();
+                         $.ajax({
+                         url: '/umtza',
+                         type:'POST',
+                         data: 'umtza='+d.toString(),
+                         });
+                         */
+                    </script>
+                    <div id="disclaimer">CodeChef is a non-commercial competitive programming community</div>
+                    <div class="inner-wrapper">
+                        <div class="cols-2">
+                            <div id="secondary-nav">
+                                <ul>
+                                    <li><a href="http://www.codechef.com/aboutus/">About CodeChef</a></li>
+                                    <li><a target="_blank" href="http://www.directi.com/">About Directi</a></li>
+                                    <li><a href="http://www.codechef.com/ceoscorner/">CEO's Corner</a></li>
+                                    <li><a href="http://www.codechef.com/c-programming">C-Programming</a></li>
+                                    <li><a href="http://www.codechef.com/Programming-Languages">Programming
+                                        Languages</a></li>
+                                    <li><a href="http://www.codechef.com/contactus">Contact Us</a></li>
+                                </ul>
+                            </div>
+                            <div id="copyright" class="cols-2">© 2009
+                                <a style="color: rgb(0, 0, 0);" href="http://www.directi.com/">Directi
+                                    Group</a>
+                                . All Rights Reserved. CodeChef uses SPOJ © by
+                                <a style="color: rgb(0, 0, 0);" href="http://www.sphere-research.com/">Sphere
+                                    Research Labs</a>
+                            </div>
+                            <div id="copyright-msg">In order to report copyright violations of any kind, send in an
+                                email to <a href="mailto:copyright@codechef.com">copyright@codechef.com</a></div>
+                        </div>
+                        <div class="cols-2-right" style="float:right;" align="right">
+                            <div id="sponsor-strip">
+                                <a target="_blank" href="http://www.directi.com/"><img alt="CodeChef a product of Directi" src="Gabba%20sprint%20_%20CodeChef_files/footer-sponsor-strip.gif"></a><br>
+                                <span>The time now is: <span id="server-time"></span></span>
+                                <br>Your IP : <span id="client-ip"></span>
+                                </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+
+                        var _gaq = _gaq || [];
+                        _gaq.push(['_setAccount', 'UA-53602-42']);
+                        _gaq.push(['_trackPageview']);
+
+                        (function () {
+                            var ga = document.createElement('script');
+                            ga.type = 'text/javascript';
+                            ga.async = true;
+                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                            var s = document.getElementsByTagName('script')[0];
+                            s.parentNode.insertBefore(ga, s);
+                        })();
+
+                    </script>
+
+
+                    <!-- Google Code for Visitors that do not sign-up Remarketing List -->
+                    <script type="text/javascript">
+                        /* <![CDATA[ */
+                        var google_conversion_id = 1066618556;
+                        var google_conversion_language = "en";
+                        var google_conversion_format = "3";
+                        var google_conversion_color = "666666";
+                        var google_conversion_label = "gbUUCPTlhAIQvJ3N_AM";
+                        var google_conversion_value = 0;
+                        /* ]]> */
+                    </script>
+                    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/conversion.js">
+                    </script><img alt="" src="Gabba%20sprint%20_%20CodeChef_files/a_002.gif" border="0" height="1" width="1">
+                    <noscript>
+                        <div style="display:inline;">
+                            <img height="1" width="1" style="border-style:none;" alt=""
+                                 src="//www.googleadservices.com/pagead/conversion/1066618556/?label=gbUUCPTlhAIQvJ3N_AM&amp;guid=ON&amp;script=0"/>
+                        </div>
+                    </noscript>
+
+                    <!-- Google Code for RM codechef Remarketing List -->
+                    <script type="text/javascript">
+                        /* <![CDATA[ */
+                        var google_conversion_id = 968176136;
+                        var google_conversion_language = "en";
+                        var google_conversion_format = "3";
+                        var google_conversion_color = "ffffff";
+                        var google_conversion_label = "iDk7CPDZ7wMQiOTUzQM";
+                        var google_conversion_value = 0;
+                        /* ]]> */
+                    </script>
+                    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/conversion.js">
+                    </script><img alt="" src="Gabba%20sprint%20_%20CodeChef_files/a.gif" border="0" height="1" width="1">
+                    <noscript>
+                        <div style="display:inline;">
+                            <img height="1" width="1" style="border-style:none;" alt=""
+                                 src="//www.googleadservices.com/pagead/conversion/968176136/?label=iDk7CPDZ7wMQiOTUzQM&amp;guid=ON&amp;script=0"/>
+                        </div>
+                    </noscript>
+
+                    <!-- Google Code for Snackdown -->
+                    <script type="text/javascript">
+                        /* <![CDATA[ */
+                        var google_conversion_id = 960072479;
+                        var google_custom_params = window.google_tag_params;
+                        var google_remarketing_only = true;
+                        /* ]]> */
+                    </script>
+                    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/conversion.js">
+                    </script><img alt="" src="Gabba%20sprint%20_%20CodeChef_files/a.htm" border="0" height="1" width="1">
+                    <noscript>
+                        <div style="display:inline;">
+                            <img height="1" width="1" style="border-style:none;" alt=""
+                                 src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/960072479/?value=0&amp;guid=ON&amp;script=0"/>
+                        </div>
+                    </noscript>
+
+
+                    <!-- Google Code for .tech domain -->
+                    <script type="text/javascript">
+                        /* <![CDATA[ */
+                        var google_conversion_id = 951716012;
+                        var google_conversion_label = "OiW5COr2yFsQrJHoxQM";
+                        var google_custom_params = window.google_tag_params;
+                        var google_remarketing_only = true;
+                        /* ]]> */
+                    </script>
+                    <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/conversion.js">
+                    </script><img alt="" src="Gabba%20sprint%20_%20CodeChef_files/a_002.htm" border="0" height="1" width="1">
+                    <noscript>
+                        <div style="display:inline;">
+                            <img height="1" width="1" style="border-style:none;" alt=""
+                                 src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/951716012/?value=1.00&amp;currency_code=USD&amp;label=OiW5COr2yFsQrJHoxQM&amp;guid=ON&amp;script=0"/>
+                        </div>
+                    </noscript>
+
+                    <!-- Start Alexa Certify Javascript -->
+                    <script type="text/javascript">
+                        _atrk_opts = {atrk_acct: "q16Cj1a8gN00iz", domain: "codechef.com", dynamic: true};
+                        (function () {
+                            var as = document.createElement('script');
+                            as.type = 'text/javascript';
+                            as.async = true;
+                            as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js";
+                            var s = document.getElementsByTagName('script')[0];
+                            s.parentNode.insertBefore(as, s);
+                        })();
+                    </script>
+                    <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=q16Cj1a8gN00iz"
+                                   style="display:none" height="1" width="1" alt=""/></noscript>
+                    <!-- End Alexa Certify Javascript -->
+
+                    <div class="cc-footer-seo">
+                        <style scoped="">
+                            .cc-footer-seo table tr th {
+                                font-weight: bold;
+                                font-size: 13px;
+                                border: 0px;
+                                padding-left: 0px;
+                                text-decoration: underline;
+                            }
+
+                            .cc-footer-seo table tr td {
+                                font-size: 12px;
+                                padding-left: 0px;
+                            }
+                        </style>
+                        <span><a href="https://www.codechef.com/">CodeChef</a> - A Platform for Aspiring Programmers</span>
+
+                        <p>CodeChef was created as a platform to help programmers make it big in the world of
+                            algorithms, <strong>computer programming</strong> and <strong>programming
+                                contests</strong>. At CodeChef we work hard to revive the geek in you by hosting a
+                            <strong>programming contest</strong> at the start of the month and another smaller
+                            programming challenge in the middle of the month. We also aim to have training sessions
+                            and discussions related to <strong>algorithms, binary search</strong>, technicalities
+                            like <strong>array size</strong> and the likes. Apart from providing a platform for
+                            <strong>programming competitions</strong>, CodeChef also has various algorithm tutorials
+                            and forum discussions to help those who are new to the world of <strong>computer
+                                programming</strong>.</p>
+
+                        <p></p>
+                        <span><a href="https://www.codechef.com/problems/easy">Practice Section</a> - A Place to hone your 'Computer Programming Skills'</span>
+
+                        <p>Try your hand at one of our many practice problems and submit your solution in a language
+                            of your choice. Our <strong>programming contest</strong> judge accepts solutions in over
+                            35+ programming languages. Preparing for coding contests were never this much fun!
+                            Receive points, and move up through the CodeChef ranks. Use our practice section to
+                            better prepare yourself for the multiple <strong>programming challenges</strong> that
+                            take place through-out the month on CodeChef. </p>
+
+                        <p></p>
+                        <span><a href="https://www.codechef.com/contests/">Compete</a> - Monthly Programming Contests and Cook-offs</span>
+
+                        <p>Here is where you can show off your <strong>computer programming</strong> skills. Take
+                            part in our 10 day long monthly <strong>coding contest</strong> and the shorter format
+                            Cook-off <strong>coding contest</strong>. Put yourself up for recognition and win great
+                            prizes. Our <strong>programming contests</strong> have prizes worth up to INR 20,000
+                            (for Indian Community), $700 (for Global Community) and lots more CodeChef goodies up
+                            for grabs.</p>
+
+                        <p></p><br>
+                        <table border="0" cellpadding="5" cellspacing="5" width="60%">
+                            <tbody><tr>
+                                <th>Programming Tools</th>
+                                <th>Practice Problems</th>
+                                <th>Initiatives</th>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.codechef.com/ide">Online IDE</a></td>
+                                <td><a href="https://www.codechef.com/problems/easy">Easy</a></td>
+                                <td><a href="http://www.codechef.com/goforgold">Go for Gold</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="http://www.codechef.com/contests#FurtureContests">Upcoming Coding
+                                    Contests</a></td>
+                                <td><a href="https://www.codechef.com/problems/medium">Medium</a></td>
+                                <td><a href="http://www.codechef.com/school">CodeChef for Schools</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="http://www.codechef.com/hostyourcontest">Contest Hosting</a></td>
+                                <td><a href="https://www.codechef.com/problems/hard">Hard</a></td>
+                                <td><a href="http://www.codechef.com/campus_chapter/about">Campus Chapters</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="http://www.codechef.com/problemsetting">Problem Setting</a></td>
+                                <td><a href="https://www.codechef.com/problems/challenge">Challenge</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><a href="http://www.codechef.com/wiki/tutorials">CodeChef Tutorials</a></td>
+                                <td><a href="https://www.codechef.com/problems/extcontest">Peer</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.codechef.com/wiki">CodeChef Wiki</a></td>
+                                <td><a href="https://www.codechef.com/problems/school">School</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><a href="https://www.codechef.com/wiki/faq">FAQ's</a></td>
+                                <td></td>
+                            </tr>
+                        </tbody></table>
+                        <p></p>
+                    </div>
+                </div>
+                <div id="block-block-48" class="block block-block block-header">
+                    <div class="content">
+                        <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/jquery_004.js"></script>
+                        <script type="text/javascript" src="Gabba%20sprint%20_%20CodeChef_files/contest-notification.js"></script>
+                    </div>
+                </div>
+                <div id="block-block-51" class="block block-block block-header">
+                    <div class="content">
+                        <script type="text/javascript">var _sf_startpt = (new Date()).getTime()</script>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script type="text/javascript">
+            var fb_param = {};
+            fb_param.pixel_id = '6009000769402';
+            fb_param.value = '0.00';
+            (function () {
+                var fpw = document.createElement('script');
+                fpw.async = true;
+                fpw.src = '//connect.facebook.net/en_US/fp.js';
+                var ref = document.getElementsByTagName('script')[0];
+                ref.parentNode.insertBefore(fpw, ref);
+            })();
+        </script>
+        <noscript><img height="1" width="1" alt="" style="display:none"
+                       src="https://www.facebook.com/offsite_event.php?id=6009000769402&amp;value=0"/></noscript>
+    </div>
+</center>
+<script>
+
+    var sscache = {};
+    function getPage(url, data, page) {
+        var cacheId = url+JSON.stringify(data);
+        var cache =sscache;
+        var success = function (data) {
+            cache[cacheId] = data;
+            $('#rankContentDiv').html(data['content']);
+            var newpage = page === undefined ? 1 : (parseInt(page) + 1);
+            var pageinfo = "<div align='center' class='pageinfo'><center> - </center></div>";
+            if (data['max_page']>0)
+            {
+                pageinfo="<div align='center' class='pageinfo'><center>"+newpage+" of "+data['max_page']+"</center></div>";
+            }
+            $("#loader").html(pageinfo);
+
+        };
+
+        var error = function (request, errorType) {
+            try {
+                if (page === undefined) {
+                    retryButton = '<center><input id="retryButton" type="button" value="Retry"/></center>';
+                    $('#rankContentDiv').html(retryButton);
+                    $('#retryButton').click(function () {
+                        $('#rankContentDiv').html('<p align="center"><img src="/sites/all/themes/abessive/images/ajax-loader.gif" /> Fetching content</p>');
+                        getPage(url, data, page);
+                    });
+                }
+                else {
+                    $("#loader").html("<center>Oops! It couldn't load. Try again.</center>");
+                }
+            }
+            catch (e) {
+            }
+        };
+
+        if(cache.hasOwnProperty(cacheId)){
+            success(cache[cacheId]);
+            return;
+        }
+
+        cAjax({
+            url:url,
+            type:"GET",
+            data:data,
+            cache:false,
+            timeout:10000,
+            dataType: "json",
+            success:success,
+            error:error
+        });
+
+    }
+
+
+    function set_page(element) {
+        var page;
+
+        if (element == "prev")
+            page = $("#prev_p").val();
+        else if (element == "next")
+            page = $("#next_p").val();
+
+        return page;
+    }
+
+    function onload_getpage_ssubmissions(element) {
+        $('#loader').html('<p><img src="/misc/ajax_loader_d.gif" style="width: 120px; height:15px;"/></p>');
+        var contest = "";
+        if ($("#ccode").length != 0) {
+            contest = '&ccode=' + $("#ccode").val();
+        }
+
+        var page = set_page(element);
+        var data = "page=" + page + "&pcode=" + $("#pcode").val() + contest;
+        var url = "/ssubmission/prob";
+        getPage(url, data, page);
+    }
+</script>
+
+
+<div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="Gabba%20sprint%20_%20CodeChef_files/R_qmi4A5CC2.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div></body></html>

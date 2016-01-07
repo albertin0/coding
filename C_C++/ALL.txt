@@ -1,0 +1,932 @@
+/*         FIRST OF ANY PROGRAM      */
+
+
+/*output
+Enter the no. of productions :2
+Enter the productions :
+A/Bc/d
+B/xy
+First(A) : [ x,d ].
+*/
+#include<stdio.h>
+#include<conio.h>
+using namespace std;
+char array[10][20],temp[10];
+int c,n;
+void fun(int,int[]);
+int fun2(int i,int j,int p[],int );
+
+int main()
+{
+   int p[2],i,j;
+   printf("Enter the no. of productions :");
+   scanf("%d",&n);
+   printf("Enter the productions :\n");
+   for(i=0;i<n;i++)
+   scanf("%s",array[i]);
+   for(i=0;i<n;i++)
+   {
+    c=-1,p[0]=-1,p[1]=-1;
+    fun(i,p);
+    printf("First(%c) : [ ",array[i][0]);
+    for(j=0;j<=c;j++)
+    printf("%c,",temp[j]);
+    printf("\b ].\n");
+    return 0;
+   }
+}
+
+int fun2(int i,int j,int p[],int key)
+{
+  int k;
+  if(!key)
+  {
+    for(k=0;k<n;k++)
+    if(array[i][j]==array[k][0])
+    break;
+    p[0]=i;p[1]=j+1;
+    fun(k,p);
+    return 0;
+  }
+  else
+  {
+    for(k=0;k<=c;k++)
+    {
+    if(array[i][j]==temp[k])
+    break;
+    }
+    if(k>c)return 1;
+    else return 0;
+  }
+}
+ void fun(int i,int p[])
+ {
+ int j,k,key;
+ for(j=2;array[i][j] != NULL; j++)
+ {
+ if(array[i][j-1]=='/')
+ {
+ if(array[i][j]>= 'A' && array[i][j]<='Z')
+ {
+ key=0;
+ fun2(i,j,p,key);
+ }
+ else
+ {
+ key = 1;
+ if(fun2(i,j,p,key))
+ temp[++c] = array[i][j];
+ if(array[i][j]== '@'&& p[0]!=-1) //taking '@' as null symbol
+ {
+ if(array[p[0]][p[1]]>='A' && array[p[0]][p[1]] <='Z')
+ {
+ key=0;
+ fun2(p[0],p[1],p,key);
+ }
+ else
+ if(array[p[0]][p[1]] != '/'&& array[p[0]][p[1]]!=NULL)
+ {
+ if(fun2(p[0],p[1],p,key))
+ temp[++c]=array[p[0]][p[1]];
+ }
+ }
+ }
+ }
+ }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*                      FOLLOW					*/
+
+
+
+
+/*output
+Enter the no. of productions :1
+Enter the productions :
+A->Aa/aAb/c
+First(A) : [ a,c ].
+
+Follow[A] : [ $,a,b ]
+*/
+#include<stdio.h>
+#include<conio.h>
+#define max 10
+#define MAX 15
+
+void ffun(int,int);
+void fun(int,int[]);
+void follow(int i);
+char array[max][MAX],temp[max][MAX];
+int c,n,t;
+int fun2(int i,int j,int p[],int key)
+{
+    int k;
+    if(!key){
+        for(k=0;k<n;k++)
+        if(array[i][j]==array[k][0])
+        break;
+        p[0]=i;p[1]=j+1;
+        fun(k,p);
+    return 0;
+    }
+    else{
+        for(k=0;k<=c;k++){
+            if(array[i][j]==temp[t][k])
+            break;
+        }
+        if(k>c)return 1;
+        else return 0;
+    }
+}
+
+void fun(int i,int p[])
+{
+    int j,k,key;
+    for(j=2;array[i][j]!=NULL;j++)
+    {
+        if(array[i][j-1]=='/'){
+            if(array[i][j]>='A'&&array[i][j]<='Z'){
+            key=0;
+            fun2(i,j,p,key);
+            }
+        else{
+            key=1;
+            if(fun2(i,j,p,key))
+                temp[t][++c]=array[i][j];
+            if(array[i][j]=='@'&&p[0]!=-1){ //taking ,@, as null symbol.
+                if(array[p[0]][p[1]]>='A'&&array[p[0]][p[1]]<='Z'){
+                    key=0;
+                    fun2(p[0],p[1],p,key);
+                }
+            else
+                if(array[p[0]][p[1]]!='/'&&array[p[0]][p[1]]!=NULL){
+                    if(fun2(p[0],p[1],p,key))
+                    temp[t][++c]=array[p[0]][p[1]];
+                }
+            }
+        }
+        }
+    }
+}
+
+char fol[max][MAX],ff[max];int f,l,ff0;
+void follow(int i)
+{
+    int j,k;
+    for(j=0;j<=ff0;j++)
+        if(array[i][0]==ff[j])
+            return;
+        if(j>ff0)ff[++ff0]=array[i][0];
+            if(i==0)fol[l][++f]='$';
+        for(j=0;j<n;j++)
+            for(k=2;array[j][k]!=NULL;k++)
+                if(array[j][k]==array[i][0])
+                    ffun(j,k);
+}
+
+void ffun(int j,int k)
+{
+    int ii,null=0,tt,cc;
+    if(array[j][k+1]=='/'||array[j][k+1]==NULL)
+        null=1;
+    for(ii=k+1;array[j][ii]!='/'&&array[j][ii]!=NULL;ii++){
+        if(array[j][ii]<='Z'&&array[j][ii]>='A')
+        {
+            for(tt=0;tt<n;tt++)
+                if(temp[tt][0]==array[j][ii])break;
+                    for(cc=1;temp[tt][cc]!=NULL;cc++)
+                    {
+                        if(temp[tt][cc]=='@')null=1;
+                        else fol[l][++f]=temp[tt][cc];
+                    }
+        }
+        else fol[l][++f]=array[j][ii];
+    }
+    if(null)follow(j);
+}
+
+int main()
+{
+    int p[2],i,j;
+    //clrscr();
+    printf("Enter the no. of productions :");
+    scanf("%d",&n);
+    printf("Enter the productions :\n");
+    for(i=0;i<n;i++)
+        scanf("%s",array[i]);
+    for(i=0,t=0;i<n;i++,t++){
+        c=0,p[0]=-1,p[1]=-1;
+        temp[t][0]=array[i][0];
+        fun(i,p);
+        temp[t][++c]=NULL;
+        printf("First(%c) : [ ",temp[t][0]);
+        for(j=1;j<c;j++)
+            printf("%c,",temp[t][j]);
+        printf("\b ].\n");
+    }
+/* Follow Finding */
+    for(i=0,l=0;i<n;i++,l++)
+    {
+        f=-1;ff0=-1;
+        fol[l][++f]=array[i][0];
+        follow(i);
+        fol[l][++f]=NULL;
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("\nFollow[%c] : [ ",fol[i][0]);
+        for(j=1;fol[i][j]!=NULL;j++)
+            printf("%c,",fol[i][j]);
+        printf("\b ]");
+    }
+    getch();
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+/*						IDENTIFIER								*/
+
+/*
+output
+enter string    abcd
+is identifier
+enter string    2abc
+not an identifier
+
+*/
+#include<iostream.h>
+#include<string.h>
+#include<conio.h>
+using namespace std;
+int isid(char* s){
+    if((s[0]>='A'&&s[0]<='Z')||(s[0]>='a'&&s[0]<='z')||s[0]=='_')
+    {
+        for(int i=1;i<strlen(s);i++){
+        if((s[i]>='A'&&s[i]<='Z')||(s[i]>='a'&&s[i]<='z')||(s[i]=='_')||(s[i]>='0'&&s[i]<='9'))
+        continue;
+        else
+        return 0;}
+         return 1;
+        }
+    return 0;
+    }
+    int main(){
+        char* ch;
+        cout<<"enter string\t";
+        cin>>ch;
+        if(isid(ch))
+        cout<<"is identifier";
+        else
+        cout<<"not an identifier";
+        }
+
+
+
+
+
+
+
+
+
+/*					INFIX TO POSTFIX										*/
+
+
+#include<iostream>
+#include<ctype.h>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+int precedence(char) ;
+char s[20];
+int top=-1;
+void push(char);
+int isoperator(char);
+char pop();
+int main()
+{
+
+char input[20];
+char ch;
+char postfix[20];
+int j=0,i;
+cout<<"Input infix expressions";
+cin>>input;
+for(i=0;i<strlen(input);i++)
+{
+input[i]=tolower(input[i]);
+}
+
+for(i=0;i<strlen(input);i++)
+{
+if(isoperator(input[i])) //1
+{if(input[i]=='(')    //if-2
+push(input[i]);
+else if(input[i]==')')
+{
+while(s[top]!='(')
+postfix[j++]=pop();
+pop();
+}
+else
+{
+if(precedence(input[i])>precedence(s[top]))
+push(input[i]);
+else if(precedence(input[i])<=precedence(s[top]))
+{
+while(s[top]!='(')
+{
+postfix[j++]=pop();
+if(precedence(input[i])<=precedence(s[top]))
+continue;
+}
+push(input[i]);
+}
+}
+
+}// if-1
+else
+postfix[j++]=input[i]; //if-1 else
+} //for loop
+while(top>=0)
+{
+postfix[j++]=pop();
+}
+postfix[j]='\0';
+cout<<"Resultant postfix:"<<postfix;
+return 0;
+}
+
+int precedence(char symbol)
+{
+switch(symbol)
+{
+case '^':return 6;
+case '*':return 5;
+case '/':return 5;
+case '%': return 5;
+case '+':return 4;
+case '-':return 4;
+default:return 0;
+}
+}
+void push(char symbol)
+{
+s[++top]=symbol;
+}
+char pop(){
+char popitem;
+popitem=s[top--];
+return popitem;
+}
+int isoperator(char c)
+{
+if(c=='(' || c==')' || c=='^'|| c=='*'  || c=='/' || c=='%' ||c=='+'||c=='-')
+return 1;
+else
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*					KEYWORD CONSTANT IDENTIFIER									*/
+
+#include<iostream.h>
+#include<string.h>
+#include<conio.h>
+using namespace std;
+int isid(char* s){
+    if((s[0]>='A'&&s[0]<='Z')||(s[0]>='a'&&s[0]<='z')||s[0]=='_')
+    {
+        for(int i=1;i<strlen(s);i++){
+        if((s[i]>=65&&s[i]<=90)||(s[i]>='a'&&s[i]<='z')||(s[i]=='_')||(s[i]>='0'&&s[i]<='9'))
+        continue;
+        else
+        return 0;}
+         return 1;
+        }
+    return 0;
+    }
+int main()
+{
+char str[50][10]={"int","auto","break","case","char","continue","do","default",
+		   "double","else","enum","extern","float","for","goto","if",
+		   "int","long","register","return","short","signed","struct"};
+char s[10];
+
+cout<<"enter the string";
+cin>>s;
+for(int i=0;i<32;i++)
+{
+if(strcmp(str[i],s)==0)
+{
+
+cout<<"keyword";
+return 0;
+}
+}
+if(isid(s))
+cout<<"identifier";
+else
+cout<<"\n constant";
+return 0;
+}
+
+
+
+
+
+
+
+/*						LEFT FACTORING								*/
+
+
+/*output
+Enter the productionabcd/abce
+
+ A->abcX
+ X->d/e
+*/
+#include<iostream>
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+using namespace std;
+int main()
+{
+
+char a[10],a1[10],a2[10],a3[10],a4[10],a5[10];
+int i,j=0,l,k;
+cout<<"Enter the production";
+gets(a);
+for(i=0;a[i]!='/';i++,j++)
+a1[j]=a[i];
+a1[j]='\0';
+for(j=++i,i=0;a[j]!='\0';j++,i++)
+a2[i]=a[j];
+a2[i]='\0';
+k=0;l=0;
+for(i=0;i<strlen(a1)||i<strlen(a2);i++)
+{
+if(a1[i]==a2[i])
+{
+a3[k]=a1[i];
+k++;
+}
+else{
+a4[l]=a1[i];
+a5[l]=a2[i];
+l++;
+}
+}
+a3[k]='X';
+a3[++k]='\0';
+a4[l]='/';
+a4[++l]='\0';
+a5[l]='\0';
+strcat(a4,a5);
+
+cout<<"\n A->"<<a3;
+cout<<"\n X->"<<a4;
+
+return 0;
+}
+
+
+
+
+
+
+
+
+
+/*							LEFT RECURSION									*/
+
+
+
+/*
+output
+enter no of production2
+
+enter productionsA->Ab/x
+B->By/f
+
+it is left recursive
+grammar without left recursion
+A->xA'
+A'->bA'
+it is left recursive
+grammar without left recursion
+B->fB'
+B'->yB'
+*/
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+#include<stdio.h>
+#define size 10
+using namespace std;
+int main()
+{
+char non_terminal,beta,alpha[10];
+int num,i,k,j;
+cout<<"\nenter no of production";
+cin>>num;
+char production[10][size];
+int index=3;
+
+cout<<"\nenter productions";
+for(i=0;i<num;i++)
+cin>>production[i];
+for(i=0;i<num;i++)
+{
+non_terminal=production[i][0];
+if(non_terminal==production[i][index])
+{
+k=index+1;
+j=0;
+while(production[i][k]!='/')
+{
+alpha[j++]=production[i][k++];
+}
+alpha[j]='\0';
+cout<<"\nit is left recursive";
+
+if(production[i][k]=='/')
+{
+beta=production[i][++k];
+}
+
+cout<<"\ngrammar without left recursion\n";
+printf("%c->%c%c\'",non_terminal,beta,non_terminal);
+printf("\n%c\'->%s%c\'",non_terminal,alpha,non_terminal);
+}
+else
+cout<<"\nis not left recursive";
+}
+return 0;
+}
+
+
+
+
+
+
+
+
+
+/*				POST TO PRE BY LINKED LIST											*/
+
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+bool isop(char c){
+    if(c=='+'||c=='-'||c=='*'||c=='/'||c=='%')
+    return true;
+    else
+    return false;
+    }
+struct cell{
+    int data;
+    cell* next;
+    };
+char* posttopre(char* post){
+    int top=-1;
+    cell* pre[100];
+    for(int i=0;i<strlen(post);i++){
+        if(!isop(post[i])){
+            pre[++top]=new cell;
+            pre[top]->data=post[i];
+            pre[top]->next=NULL;
+            }
+        else{
+            cell* temp=new cell;
+            temp->data=post[i];
+            temp->next=pre[top-1];
+            cell* t=temp->next;
+            while(t->next!=NULL)
+            t=t->next;
+            t->next=pre[top];
+            pre[--top]=temp;
+            }
+        }
+        cell* show=pre[0];
+        char* pre1=new char[strlen(post)];
+        for(int j=0;j<strlen(post);j++){
+            pre1[j]=show->data;
+            show=show->next;
+            }
+            return pre1;
+    }
+    int main(){
+        char* post;
+        cout<<"enter postfix notation:";
+        cin>>post;
+        char* pre=posttopre(post);
+      cout<<pre;
+        return 0;
+        }
+
+
+
+
+
+
+
+/*							PRE TO POST BY LINKED LIST							*/
+
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+bool isop(char c){
+    if(c=='+'||c=='-'||c=='*'||c=='/'||c=='%')
+    return true;
+    else
+    return false;
+    }
+struct cell{
+    int data;
+    cell* next;
+    };
+char* pretopost(char* post){
+    strrev(post);
+    int top=-1;
+    cell* pre[100];
+    for(int i=0;i<strlen(post);i++){
+        if(!isop(post[i])){
+            pre[++top]=new cell;
+            pre[top]->data=post[i];
+            pre[top]->next=NULL;
+            }
+        else{
+            cell* temp=new cell;
+            temp->data=post[i];
+            temp->next=pre[top-1];
+            cell* t=temp->next;
+            while(t->next!=NULL)
+            t=t->next;
+            t->next=pre[top];
+            pre[--top]=temp;
+            }
+        }
+        cell* show=pre[0];
+        char* pre1=new char[strlen(post)];
+        for(int j=0;j<strlen(post);j++){
+            pre1[j]=show->data;
+            show=show->next;
+            }
+            strrev(pre1);
+            return pre1;
+    }
+    int main(){
+        char* pre;
+        cout<<"enter pre fix notation:";
+        cin>>pre;
+        char* post=pretopost(pre);
+
+      cout<<post;
+      return 0;
+        }
+
+
+
+
+
+
+
+
+/*						POST TO PRE									*/
+
+/*
+output
+Enter an expression in postfix form: abc*+
+
+The Prefix expression is: + a * b c
+*/
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+#define MAX 50
+using namespace std;
+struct postfix
+{
+char stack[MAX][MAX], target[MAX] ;
+char temp1[2], temp2[2] ;
+char str1[MAX], str2[MAX], str3[MAX] ;
+int i, top ;
+} ;
+void initpostfix ( struct postfix * ) ;
+void setexpr ( struct postfix *, char * ) ;
+void push ( struct postfix *, char * ) ;
+void pop ( struct postfix *, char * ) ;
+void convert ( struct postfix * ) ;
+void show ( struct postfix ) ;
+int main( )
+{
+struct postfix q ;
+char expr[MAX] ;
+
+initpostfix ( &q ) ;
+printf ( "\nEnter an expression in postfix form: " ) ;
+gets ( expr ) ;
+setexpr ( &q, expr ) ;
+convert ( &q ) ;
+printf ( "\nThe Prefix expression is: " ) ;
+show ( q ) ;
+return 0;
+}
+/* initializes the elements of the structure */
+void initpostfix ( struct postfix *p )
+{
+p -> i = 0 ;
+p -> top = -1 ;
+strcpy ( p -> target, "" ) ;
+}
+/* copies given expr. to target string */
+void setexpr ( struct postfix *p, char *c )
+{
+strcpy ( p -> target, c ) ;
+}
+/* adds an operator to the stack */
+void push ( struct postfix *p, char *str )
+{
+if ( p -> top == MAX - 1 )
+printf ( "\nStack is full." ) ;
+else
+{
+p -> top++ ;
+strcpy ( p -> stack[p -> top], str ) ;
+}
+}
+/* pops an element from the stack */
+void pop ( struct postfix *p, char *a )
+{
+if ( p -> top == -1 )
+printf ( "\nStack is empty." ) ;
+else
+{
+strcpy ( a, p -> stack[p -> top] ) ;
+p -> top-- ;
+}
+}
+/* converts given expr. to prefix form */
+void convert ( struct postfix *p )
+{
+while ( p -> target[p -> i] != '\0' )
+{
+/* skip whitespace, if any */
+if ( p -> target[p -> i] == ' ')
+p -> i++ ;
+if( p -> target[p -> i] == '%' || p -> target[p -> i] == '*' || p -> target[p -> i] == '-' || p -> target[p -> i] == '+' || p -> target[p -> i] == '/' || p -> target[p -> i] == '$' )
+{
+pop ( p, p -> str2 ) ;
+pop ( p, p -> str3 ) ;
+p -> temp1[0] = p -> target[ p -> i] ;
+p -> temp1[1] = '\0' ;
+strcpy ( p -> str1, p -> temp1 ) ;
+strcat ( p -> str1, p -> str3 ) ;
+strcat ( p -> str1, p -> str2 ) ;
+push ( p, p -> str1 ) ;
+}
+else
+{
+p -> temp1[0] = p -> target[p -> i] ;
+p -> temp1[1] = '\0' ;
+strcpy ( p -> temp2, p -> temp1 ) ;
+push ( p, p -> temp2 ) ;
+}
+p -> i++ ;
+}
+}
+/* displays the prefix form of expr. */
+void show ( struct postfix p )
+{
+char *temp = p.stack[0] ;
+while ( *temp )
+{
+printf ( "%c ", *temp ) ;
+temp++ ;
+}
+}
+
+
+
+
+
+
+
+
+/*							PRE TO POST									*/
+
+
+
+
+/*
+output
+Enter a prefix : +a/*bcd
+abc*d/+
+*/
+#include<iostream.h>
+#include<string.h>
+#include<conio.h>
+#define MAX 100
+
+  int count=1;
+char e[MAX],b[2*MAX];
+
+int isoperator(char ch){
+    return ch=='+' || ch=='-' || ch == '*' ||
+	ch == '/' || ch == '$' || ch == '%';
+}
+
+void left(char,int);
+void right(char,int);
+
+void left(char op,int i){
+
+    if(isoperator(op)){
+
+	b[2*i]=op;
+	count++;
+	left(e[count],2*i);
+	right(e[count],2*i);
+    }
+    else
+    {
+	b[2*i]=op;
+	count++;
+    }
+}
+
+void right(char op,int i){
+
+    if(isoperator(op)){
+
+	b[2*i+1]=op;
+	count++;
+	left(e[count],2*i+1);
+	right(e[count],2*i+1);
+    }
+    else
+    {
+	b[2*i+1]=op;
+	count++;
+    }
+}
+
+void postorder(int i){
+    if(isoperator(b[i]))postorder(2*i);
+    if(isoperator(b[i]))postorder(2*i+1);
+    cout << b[i] ;
+
+}
+
+int main(){
+
+    cout << "Enter a prefix : ";
+    cin >> e;
+    int len=strlen(e);
+
+    count=0;
+    b[1]=e[count];
+
+    count++;
+    left(e[count],1);
+    right(e[count],1);
+
+    postorder(1);
+    getch();
+    return 0;
+
+
+}

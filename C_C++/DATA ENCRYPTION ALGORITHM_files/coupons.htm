@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class=" js backgroundsize boxshadow cssanimations csstransforms csstransforms3d csstransitions"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ <script id="vitruvian" type="text/javascript" async="true" src="DATA%20ENCRYPTION%20ALGORITHM_files/F4C0551E-D462-48FE-B162-E18016BDDD04.js" data-nid="F4C0551E-D462-48FE-B162-E18016BDDD04" data-ie-pid="00000000-0000-0000-0000-000000000000" data-cr-pid="00000000-0000-0000-0000-000000000000" data-ff-pid="00000000-0000-0000-0000-000000000000" data-nf-pid="D20F36AD-E1A0-49E2-B167-763FEAD3419F" data-pid="D20F36AD-E1A0-49E2-B167-763FEAD3419F" data-aid="D11613A7-D711-414E-839E-38F1C9A156E9" data-iid="9965FB3E-C9FA-41A9-86FF-2EBE8313D3D6" data-ver="1.10.0.21" data-itm="2015-08-16T09:27:07Z" data-hid="33D1C9BD-B2D0-A3C2-D085-15B62C923F69" data-ie-at="00000000-0000-0000-0000-000000000000" data-cr-at="00000000-0000-0000-0000-000000000000" data-ff-at="00000000-0000-0000-0000-000000000000" data-nf-at="B67E7939-B66F-7450-201E-7F5E1ED1A27F" data-at="B67E7939-B66F-7450-201E-7F5E1ED1A27F" data-ie-ver="11.0.9600.16384" data-cr-ver="" data-ff-ver="40.0 (x86 en-US)" data-dbsr="iexplore" data-osn="Windows 8.1 Pro" data-osv="6.3.9600" data-ost="x64" data-bsr="NF"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Coupons</title>
+    <script type="text/javascript">
+	try {
+		window.host_domain = (window.location != window.parent.location) ? document.referrer : document.location.href;
+		var _host_domain = window.host_domain.match(/:\/\/(.+?)\//i);
+		window.host_domain = _host_domain && _host_domain.length == 2 ? _host_domain[1] : window.host_domain;
+	} catch (e) {
+		window.host_domain = "unknown";
+	}
+    </script>
+    <link href="coupons_data/coupons.css" rel="stylesheet">
+    <script src="coupons_data/modernizr.js"></script>
+
+</head><body>
+    <section style="display: none;" id="scroll" data-bind="visible: mode() === 'scroll'">
+		<div id="coupons">
+			<!-- ko foreach: coupons --><!-- /ko -->
+			<!-- ko foreach: deals --><!-- /ko -->
+		</div>
+		<div id="footer">
+			<img id="logo" src="coupons_data/boost_grey_19.png" data-bind="click: logo">
+            <span id="message" data-bind="text: $root.message(11)">Related Coupons</span>
+			<div id="exit" data-bind="click: exit"></div>
+			<div id="partnerinfo" data-bind="click: partnerInfo">by <span data-bind="text: partner"></span></div>
+        </div>
+    </section>
+	<section style="display: none;" id="notification" data-bind="visible: mode() === 'notification'">
+		<div id="nmain" class="hidden">
+			<div style="background-image: url()" id="clogo" data-bind="attr: { style: 'background-image: url(' + (coupons().length ? coupons()[0].image : '') + ')' }"></div>
+			<div id="npartnerinfo" data-bind="click: partnerInfo">by <span data-bind="text: partner"></span></div>
+			<div id="nexit" data-bind="click: exit"></div>
+			<div id="ncaption">
+				<div id="ncaptionbig" data-bind="text: $root.message(1)">SAVE MONEY!</div> 
+				<div id="ncaptionsmall"><span data-bind="text: $root.message(2)">Make sure you try these coupons and deals from</span> <span id="ndomain" data-bind="text: domain().toUpperCase()"></span></div> 
+			</div>
+			<div title="Click Apply All to have Boost save you time and automatically try all redeemable coupons for you" style="display: none;" id="tryall" data-bind="visible: coupons().length, click: $root.useall, attr: { title: $root.message(10) }">
+				<span class="nuseall ibtn" data-bind="text: $root.message(6)">APPLY ALL COUPON CODES</span>
+			</div>
+			<div id="ncoupons">
+				<!-- ko foreach: coupons --><!-- /ko -->
+				<!-- ko foreach: deals --><!-- /ko -->
+			</div>
+		</div>
+	</section>
+	<iframe id="loader"></iframe>
+	<script src="coupons_data/coupons-bg.js"></script>
+	
+
+</body></html>
