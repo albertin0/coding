@@ -6,9 +6,9 @@ using namespace std;
 int main()
 {
 	int n,i,j,arr[1000];
-	cin>>j;
-	while(j--)
-	{
+	//cin>>j;
+	//while(j--)
+	//{
 		cin>>n;
 		memset(arr,0,sizeof(arr));
 		int ptr=0,lim,zero;
@@ -28,7 +28,7 @@ int main()
 		cout<<zero<<" ";
 		for(i=0;i<ptr;i++)
 			cout<<arr[i]<<" ";
-		cout<<endl;
-	}
+		//cout<<endl;
+	//}
 	return 0;
 }
